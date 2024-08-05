@@ -5,6 +5,7 @@ import { UnpopularButton } from "unpopular-js";
 
 export default function Home() {
   const router = useRouter();
+
   return (
     <div
       style={{
@@ -12,6 +13,9 @@ export default function Home() {
         padding: "40px",
         maxWidth: "800px",
         margin: "0 auto",
+        backgroundColor: "#f4f4f4", // Light background for better readability
+        borderRadius: "8px",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
       }}
     >
       <h1
@@ -20,22 +24,34 @@ export default function Home() {
           textAlign: "center",
           marginBottom: "40px",
           fontSize: "36px",
+          fontWeight: "bold",
         }}
       >
-        Installation Guide
+        Installation Guide for Unpopular JS
       </h1>
 
-      <p style={{ fontSize: "18px", lineHeight: "1.6" }}>
-        Follow these steps to install and use the <code>UnpopularButton</code>{" "}
-        component in your React project.
-      </p>
+      <section>
+        <p style={{ fontSize: "18px", lineHeight: "1.6" }}>
+          Welcome to <strong>Unpopular JS</strong>, a modern and customizable UI
+          component library for React. Our library aims to provide a simple yet
+          elegant set of components to enhance your web applications. Currently,
+          our library features the <code>UnpopularButton</code> component,
+          designed to be flexible and stylish, fitting seamlessly into your
+          React projects.
+        </p>
+        <p style={{ fontSize: "18px", lineHeight: "1.6" }}>
+          Follow the steps below to get started with the{" "}
+          <code>UnpopularButton</code> component and see how it can be used in
+          your application.
+        </p>
+      </section>
 
       <h2 style={{ color: "#007bff", marginTop: "40px" }}>
         Step 1: Install the Package
       </h2>
       <p style={{ fontSize: "16px", lineHeight: "1.6" }}>
-        Run the following command to install the <code>unpopular-js</code>{" "}
-        package using npm:
+        To add the <code>unpopular-js</code> package to your React project, use
+        npm or Yarn. Here’s how you can install it:
       </p>
       <pre
         style={{
@@ -43,12 +59,13 @@ export default function Home() {
           padding: "10px",
           borderRadius: "4px",
           overflow: "auto",
+          marginBottom: "20px",
         }}
       >
         <code>{`npm install unpopular-js`}</code>
       </pre>
       <p style={{ fontSize: "16px", lineHeight: "1.6" }}>
-        If you are using Yarn, run:
+        Alternatively, if you are using Yarn, run:
       </p>
       <pre
         style={{
