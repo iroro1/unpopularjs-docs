@@ -12,7 +12,8 @@
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "unpopular": "^1.0.0"
+    "unpopular": "^1.0.0",
+    "unpopular-js": "^1.0.5"
   },
   "devDependencies": {
     "eslint": "^8",
