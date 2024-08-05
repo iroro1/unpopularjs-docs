@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
         <div className="fixed p-4 top-0 left-0 min-h-screen w-[250px] bg-slate-800 text-white">
           <nav>
             <div className="mb-4 bg-white rounded-md text-center py-3">
-              <h1 className="text-xl font-bold text-red-800">Unpopular-js</h1>
+              <h1 className="text-xl font-bold text-slate-800">Unpopular-js</h1>
             </div>
             <h3 className="text-[15px] font-bold mt-4">
               Component Documentation
