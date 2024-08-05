@@ -21,6 +21,14 @@ const NavItems = () => {
       title: "UnpopularToast",
       path: "/unpopular-toast",
     },
+    {
+      title: "UnpopularModal",
+      path: "/unpopular-modal",
+    },
+    {
+      title: "UnpopularTTooltip",
+      path: "/unpopular-tooltip",
+    },
   ];
 
   // active paath
