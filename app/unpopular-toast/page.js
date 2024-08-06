@@ -67,8 +67,8 @@ export default function ToastDocs() {
       <p style={{ fontSize: "18px", lineHeight: "1.6" }}>
         The <code>UnpopularToast</code> component is a versatile and
         customizable notification system for React. Explore the various options
-        available to tailor your toasts to fit your application's design and
-        functionality needs.
+        available to tailor your toasts to fit your application&ldquo;s design
+        and functionality needs.
       </p>
 
       <h2 style={{ color: "#007bff", marginTop: "40px" }}>Basic Usage</h2>
@@ -108,8 +108,9 @@ export default function ToastDocs() {
         </li>
         <li>
           <strong>type</strong>: The type of toast. Options are{" "}
-          <code>'success'</code>, <code>'error'</code>, and <code>'info'</code>.
-          Default is <code>'info'</code>.
+          <code>&ldquo;success&ldquo;</code>, <code>&ldquo;error&ldquo;</code>,
+          and <code>&ldquo;info&ldquo;</code>. Default is{" "}
+          <code>&ldquo;info&ldquo;</code>.
         </li>
         <li>
           <strong>duration</strong>: Duration (in milliseconds) before the toast
@@ -133,14 +134,17 @@ export default function ToastDocs() {
         </li>
         <li>
           <strong>position</strong>: Position of the toast on the screen.
-          Options are <code>'top-left'</code>, <code>'top-right'</code>,{" "}
-          <code>'bottom-left'</code>, and <code>'bottom-right'</code>. Default
-          is <code>'top-right'</code>.
+          Options are <code>&ldquo;top-left&ldquo;</code>,{" "}
+          <code>&ldquo;top-right&ldquo;</code>,{" "}
+          <code>&ldquo;bottom-left&ldquo;</code>, and{" "}
+          <code>&ldquo;bottom-right&ldquo;</code>. Default is{" "}
+          <code>&ldquo;top-right&ldquo;</code>.
         </li>
         <li>
           <strong>animation</strong>: Animation effect for the toast. Options
-          are <code>'fade'</code> and <code>'slide'</code>. Default is{" "}
-          <code>'fade'</code>.
+          are <code>&ldquo;fade&ldquo;</code> and{" "}
+          <code>&ldquo;slide&ldquo;</code>. Default is{" "}
+          <code>&ldquo;fade&ldquo;</code>.
         </li>
       </ul>
 

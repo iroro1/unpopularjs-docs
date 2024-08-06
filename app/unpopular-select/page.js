@@ -93,14 +93,16 @@ const SelectDocs = () => {
             <strong>placeholder</strong> (string) - <code>#0056b3</code>.
           </li>
           <li>
-            <strong>renderOption</strong> (string) - <code>"8px"</code>.
+            <strong>renderOption</strong> (string) -{" "}
+            <code>&ldquo;8px&ldquo;</code>.
           </li>
           <li>
-            <strong>renderSelected</strong> (string) - s <code>"16px"</code>.
+            <strong>renderSelected</strong> (string) - s{" "}
+            <code>&ldquo;16px&ldquo;</code>.
           </li>
           <li>
             <strong>style</strong> (string) - Default is{" "}
-            <code>"12px 24px"</code>.
+            <code>&ldquo;12px 24px&ldquo;</code>.
           </li>
           <li>
             <strong>value</strong> (string) -
@@ -118,7 +120,7 @@ const SelectDocs = () => {
 
         <h2 style={styles.subtitle}>Usage Example</h2>
         <p style={styles.text}>
-          Here's a basic example of how to use the{" "}
+          Here&apos;s a basic example of how to use the{" "}
           <code style={styles.code}>UnpopularSelect</code> component:
         </p>
         <pre style={styles.codeBlock}>

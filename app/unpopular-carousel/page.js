@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 const items = [
   <div
+    key={1}
     style={{
       backgroundColor: "#ff9999",
       height: "300px",
@@ -17,6 +18,7 @@ const items = [
     Slide 1
   </div>,
   <div
+    key={2}
     style={{
       backgroundColor: "#99ff99",
       height: "300px",
@@ -29,6 +31,7 @@ const items = [
     Slide 2
   </div>,
   <div
+    key={3}
     style={{
       backgroundColor: "#9999ff",
       height: "300px",
@@ -88,7 +91,7 @@ const CarouselDocs = () => {
 <UnpopularCarousel items={items} />`}
         </code>
       </pre>
-      <UnpopularCarousel items={items} />
+      <UnpopularCarousel key={items} items={items} />
 
       <h2 style={{ color: "#007bff", marginTop: "40px" }}>Custom Styles</h2>
       <pre

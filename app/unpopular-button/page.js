@@ -43,7 +43,8 @@ const ButtonDocs = () => {
           </li>
           <li>
             <strong>type</strong> (string) - The type of the button. Can be
-            "button", "submit", or "reset". Default is "button".
+            &ldquo;button&ldquo;, &ldquo;submit&ldquo;, or &ldquo;reset&ldquo;.
+            Default is &ldquo;button&ldquo;.
           </li>
           <li>
             <strong>style</strong> (object) - Inline styles to apply to the
@@ -59,15 +60,15 @@ const ButtonDocs = () => {
           </li>
           <li>
             <strong>borderRadius</strong> (string) - The border radius of the
-            button. Default is <code>"8px"</code>.
+            button. Default is <code>&ldquo;8px&ldquo;</code>.
           </li>
           <li>
             <strong>fontSize</strong> (string) - The font size of the button
-            text. Default is <code>"16px"</code>.
+            text. Default is <code>&ldquo;16px&ldquo;</code>.
           </li>
           <li>
             <strong>padding</strong> (string) - The padding inside the button.
-            Default is <code>"12px 24px"</code>.
+            Default is <code>&ldquo;12px 24px&ldquo;</code>.
           </li>
         </ul>
       </section>
@@ -75,7 +76,7 @@ const ButtonDocs = () => {
       <section style={styles.section}>
         <h2 style={styles.subtitle}>Usage Example</h2>
         <p style={styles.text}>
-          Here's a basic example of how to use the{" "}
+          Here&ldquo;s a basic example of how to use the{" "}
           <code style={styles.code}>UnpopularButton</code> component:
         </p>
         <pre style={styles.codeBlock}>

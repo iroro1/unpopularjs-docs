@@ -199,7 +199,8 @@ export default function TooltipDocs() {
             <td>position</td>
             <td>string</td>
             <td>
-              The position of the tooltip ("top", "bottom", "left", "right").
+              The position of the tooltip (&ldquo;top&ldquo;,
+              &ldquo;bottom&ldquo;, &ldquo;left&ldquo;, &ldquo;right&ldquo;).
             </td>
           </tr>
           <tr
