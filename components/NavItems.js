@@ -26,8 +26,32 @@ const NavItems = () => {
       path: "/unpopular-modal",
     },
     {
-      title: "UnpopularTTooltip",
+      title: "UnpopularTooltip",
       path: "/unpopular-tooltip",
+    },
+    {
+      title: "UnpopularTable",
+      path: "/unpopular-table",
+    },
+    {
+      title: "UnpopularAccordion",
+      path: "/unpopular-accordion",
+    },
+    {
+      title: "UnpopularTabs",
+      path: "/unpopular-tabs", //Stopped here
+    },
+    {
+      title: "UnpopularCarousel",
+      path: "/unpopular-carousel",
+    },
+    // {
+    //   title: "UnpopularCalendar",
+    //   path: "/unpopular-calendar",
+    // },
+    {
+      title: "UnpopularDatePicker",
+      path: "/unpopular-date-picker",
     },
   ];
 
@@ -38,7 +62,7 @@ const NavItems = () => {
     return activePath === path;
   };
   return (
-    <ul className="mt-4">
+    <ul className="mt-4 h-full overflow-y-auto">
       {navItems.map((item) => (
         <li
           className={`py-1 mb-2 text-[14px] font-bold hover:text-[#bec6c4] cursor-pointer ${

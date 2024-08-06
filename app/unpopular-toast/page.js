@@ -1,12 +1,12 @@
 "use client";
-
 import React, { useState } from "react";
-import UnpopularToast from "../../components/UnpopularToast";
 import {
   FaCheckCircle,
   FaExclamationCircle,
   FaInfoCircle,
 } from "react-icons/fa";
+import { UnpopularButton, UnpopularToast } from "unpopular-js";
+import { useRouter } from "next/navigation";
 
 export default function ToastDocs() {
   const [toast, setToast] = useState(null);
@@ -16,7 +16,7 @@ export default function ToastDocs() {
   const [toastColor, setToastColor] = useState("#007bff");
   const [textColor, setTextColor] = useState("#fff");
   const [icon, setIcon] = useState(null);
-
+  const router = useRouter();
   const showToast = (
     type,
     position,
@@ -56,10 +56,9 @@ export default function ToastDocs() {
     >
       <h1
         style={{
-          color: "#333",
-          textAlign: "center",
-          marginBottom: "40px",
-          fontSize: "36px",
+          fontSize: "2.5rem",
+          marginBottom: "20px",
+          color: "#007bff",
         }}
       >
         UnpopularToast Component Documentation
@@ -87,7 +86,6 @@ export default function ToastDocs() {
         }}
       >
         <code>{`import UnpopularToast from 'unpopular-js';
-
 // Usage in your component
 <UnpopularToast
   message="This is a basic toast notification!"
@@ -329,6 +327,18 @@ export default function ToastDocs() {
         options to enhance user experience with elegant and functional toast
         messages in your React applications.
       </p>
+
+      <div className="flex justify-between mt-5 w-full">
+        <UnpopularButton
+          style={{ backgroundColor: "#0056b3" }}
+          onClick={() => router.push("/unpopular-select")}
+        >
+          To UnpopularSelect
+        </UnpopularButton>
+        <UnpopularButton onClick={() => router.push("/unpopular-modal")}>
+          To UnpopularModal
+        </UnpopularButton>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,122 @@
+.unpopular-calendar {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.calendar-views {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+
+.calendar-views button {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: #fff;
+}
+
+.day {
+  padding: 15px;
+  border: 1px solid #ddd;
+  position: relative;
+  cursor: pointer;
+}
+
+.day:hover {
+  background-color: #f1f1f1;
+}
+
+.day .events {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+}
+
+.event {
+  background-color: #007bff;
+  color: #fff;
+  padding: 3px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  margin-top: 3px;
+}
+
+.event-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content input,
+.modal-content textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.modal-content button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
+}
+
+.modal-content button + button {
+  background-color: #ff4d4d;
+}
+
+.modal-content button + button:hover {
+  background-color: #cc0000;
+}

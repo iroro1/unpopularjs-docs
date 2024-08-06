@@ -37,7 +37,8 @@ export default function Home() {
           elegant set of components to enhance your web applications. Currently,
           our library features the <code>UnpopularButton</code> component,
           designed to be flexible and stylish, fitting seamlessly into your
-          React projects.
+          React projects. Its first version was created on the 5th of August
+          2024
         </p>
         <p style={{ fontSize: "18px", lineHeight: "1.6" }}>
           Follow the steps below to get started with the{" "}
@@ -47,7 +48,7 @@ export default function Home() {
       </section>
 
       <h2 style={{ color: "#007bff", marginTop: "40px" }}>
-        Step 1: Install the Package
+        Install the Package
       </h2>
       <p style={{ fontSize: "16px", lineHeight: "1.6" }}>
         To add the <code>unpopular-js</code> package to your React project, use
@@ -80,7 +81,7 @@ export default function Home() {
 
       <div className="flex justify-end mt-5">
         <UnpopularButton onClick={() => router.push("/unpopular-button")}>
-          To Unpopular Button
+          To UnpopularButton
         </UnpopularButton>
       </div>
     </div>

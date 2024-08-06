@@ -14,7 +14,7 @@ const ButtonDocs = () => {
         This guide will show you how to use and style it.
       </p>
 
-      <section style={styles.section}>
+      {/* <section style={styles.section}>
         <h2 style={styles.subtitle}>Installation</h2>
         <p style={styles.text}>Install the package using npm or yarn:</p>
         <pre style={styles.codeBlock}>
@@ -23,7 +23,7 @@ const ButtonDocs = () => {
         <pre style={styles.codeBlock}>
           <code>yarn add unpopular-js</code>
         </pre>
-      </section>
+      </section> */}
 
       <section style={styles.section}>
         <h2 style={styles.subtitle}>UnpopularButton Component</h2>
@@ -224,9 +224,15 @@ export default App;`}
         </p>
       </section>
 
-      <div className="flex justify-end mt-5">
+      <div className="flex justify-between mt-5 w-full">
+        <UnpopularButton
+          style={{ backgroundColor: "#0056b3" }}
+          onClick={() => router.push("/")}
+        >
+          To Installation
+        </UnpopularButton>
         <UnpopularButton onClick={() => router.push("/unpopular-select")}>
-          To Unpopular Select
+          To UnpopularSelect
         </UnpopularButton>
       </div>
     </div>

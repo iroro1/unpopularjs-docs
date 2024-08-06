@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 const UnpopularModal = ({
@@ -8,15 +8,32 @@ const UnpopularModal = ({
   children,
   size = "medium",
   position = "center",
-  animation = "fade",
   backdropColor = "rgba(0, 0, 0, 0.5)",
   titleColor = "#333",
   contentColor = "#000",
   buttonColor = "#007bff",
   buttonTextColor = "#fff",
   closeButton = true,
+  showbutton = true,
+  buttonTitle = "Close",
+  buttonOnClick = () => {},
+  closeOnClickOutside = true,
+  animation = "fade",
 }) => {
   const [isAnimating, setIsAnimating] = useState(false);
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   const handleClose = () => {
     setIsAnimating(true);
@@ -25,6 +42,21 @@ const UnpopularModal = ({
       setIsAnimating(false);
     }, 300); // Match the animation duration
   };
+
+  const handleOutsideClick = (event) => {
+    if (modalRef.current && !modalRef.current.contains(event.target)) {
+      handleClose();
+    }
+  };
+
+  useEffect(() => {
+    if (closeOnClickOutside) {
+      document.addEventListener("mousedown", handleOutsideClick);
+      return () => {
+        document.removeEventListener("mousedown", handleOutsideClick);
+      };
+    }
+  }, [closeOnClickOutside]);
 
   if (!isOpen && !isAnimating) return null;
 
@@ -39,20 +71,25 @@ const UnpopularModal = ({
     opacity: isAnimating ? 0 : 1,
     transition: `opacity 0.3s ease`,
     zIndex: 1000,
+    overflowY: "auto",
   };
 
   const modalContentStyles = {
     position: "absolute",
     top: position === "center" ? "50%" : position === "top" ? "20%" : "80%",
     left: "50%",
-    transform: "translate(-50%, -50%)",
+    transform: isAnimating
+      ? "scale(0.9) translate(-50%, -50%)"
+      : "scale(1) translate(-50%, -50%)",
     backgroundColor: "#fff",
     borderRadius: "8px",
     padding: "20px",
     width: size === "small" ? "300px" : size === "large" ? "600px" : "400px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-    transition: "transform 0.3s ease",
-    transform: isAnimating ? "scale(0.9)" : "scale(1)",
+    transition:
+      animation === "scale"
+        ? "transform scale(0.9) 0.3s ease-in-out"
+        : "transform 0.3s ease-in-out",
   };
 
   const closeButtonStyles = {
@@ -90,7 +127,7 @@ const UnpopularModal = ({
 
   return (
     <div style={modalStyles}>
-      <div style={modalContentStyles}>
+      <div style={modalContentStyles} ref={modalRef}>
         {closeButton && (
           <button style={closeButtonStyles} onClick={handleClose}>
             &times;
@@ -98,9 +135,11 @@ const UnpopularModal = ({
         )}
         {title && <div style={titleStyles}>{title}</div>}
         <div style={contentStyles}>{children}</div>
-        <button style={buttonStyles} onClick={handleClose}>
-          Close
-        </button>
+        {showbutton && (
+          <button style={buttonStyles} onClick={buttonOnClick}>
+            {buttonTitle}
+          </button>
+        )}
       </div>
     </div>
   );
@@ -120,6 +159,10 @@ UnpopularModal.propTypes = {
   buttonColor: PropTypes.string,
   buttonTextColor: PropTypes.string,
   closeButton: PropTypes.bool,
+  closeOnClickOutside: PropTypes.bool,
+  showbutton: PropTypes.bool,
+  buttonTitle: PropTypes.string,
+  buttonOnClick: PropTypes.func,
 };
 
 UnpopularModal.defaultProps = {
@@ -133,6 +176,10 @@ UnpopularModal.defaultProps = {
   buttonColor: "#007bff",
   buttonTextColor: "#fff",
   closeButton: true,
+  closeOnClickOutside: true,
+  showbutton: true,
+  buttonTitle: "Close",
+  buttonOnClick: () => {},
 };
 
 export default UnpopularModal;

@@ -16,7 +16,6 @@ const UnpopularSelect = ({
   clearable = false,
   groupOptions = false,
   renderOption,
-  renderSelected,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState(
@@ -51,6 +50,12 @@ const UnpopularSelect = ({
 
   const handleSearch = (event) => {
     setFilter(event.target.value);
+
+    const filteredOptions = options.filter((opt) =>
+      opt.label.toLowerCase().includes(event.target.value.toLowerCase())
+    );
+    asyncLoad;
+    setAsyncOptions(filteredOptions);
   };
 
   const handleClear = () => {
@@ -158,7 +163,23 @@ const UnpopularSelect = ({
               }}
             />
           )}
-          {(groupOptions
+          {/* // where to use filterd option */}
+
+          {(filter
+            ? filteredOptions.map((option) => (
+                <div
+                  key={option.value}
+                  onClick={() => handleSelect(option)}
+                  style={{
+                    padding: "10px",
+                    borderBottom: "1px solid #007bff",
+                    cursor: "pointer",
+                  }}
+                >
+                  {option.label}
+                </div>
+              ))
+            : groupOptions
             ? (asyncLoad ? asyncOptions : options).reduce((groups, option) => {
                 const group = groups.find((g) => g.group === option.group);
                 if (group) {
@@ -183,24 +204,47 @@ const UnpopularSelect = ({
                   {group.group}
                 </div>
               )}
-              {group.options.map((option) => (
-                <div
-                  key={option.value}
-                  onClick={() => handleSelect(option.value)}
-                  style={{
-                    padding: "10px",
-                    cursor: "pointer",
-                    backgroundColor: selectedOptions.includes(option.value)
-                      ? "#007bff"
-                      : "#fff",
-                    color: selectedOptions.includes(option.value)
-                      ? "#fff"
-                      : "#333",
-                  }}
-                >
-                  {renderOption ? renderOption(option) : option.label}
-                </div>
-              ))}
+              {!filter &&
+                group.options?.map((option) => (
+                  <div
+                    key={option.value}
+                    onClick={() => handleSelect(option.value)}
+                    style={{
+                      padding: "10px",
+                      cursor: "pointer",
+                      backgroundColor: selectedOptions.includes(option.value)
+                        ? "#007bff"
+                        : "#fff",
+                      color: selectedOptions.includes(option.value)
+                        ? "#fff"
+                        : "#333",
+                    }}
+                  >
+                    {renderOption ? renderOption(option) : option.label}
+                  </div>
+                ))}
+              {filter &&
+                filteredOptions?.map((option) => (
+                  <div
+                    key={option.value}
+                    onClick={() => {
+                      handleSelect(option.value);
+                      setFilter("");
+                    }}
+                    style={{
+                      padding: "10px",
+                      cursor: "pointer",
+                      backgroundColor: selectedOptions.includes(option.value)
+                        ? "#007bff"
+                        : "#fff",
+                      color: selectedOptions.includes(option.value)
+                        ? "#fff"
+                        : "#333",
+                    }}
+                  >
+                    {renderOption ? renderOption(option) : option.label}
+                  </div>
+                ))}
             </div>
           ))}
         </div>
@@ -230,7 +274,6 @@ UnpopularSelect.propTypes = {
   clearable: PropTypes.bool,
   groupOptions: PropTypes.bool,
   renderOption: PropTypes.func,
-  renderSelected: PropTypes.func,
 };
 
 UnpopularSelect.defaultProps = {
@@ -246,7 +289,6 @@ UnpopularSelect.defaultProps = {
   clearable: false,
   groupOptions: false,
   renderOption: null,
-  renderSelected: null,
 };
 
 export default UnpopularSelect;
