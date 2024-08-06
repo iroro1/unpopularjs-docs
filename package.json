@@ -13,7 +13,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
-    "unpopular-js": "^1.0.8"
+    "unpopular-js": "^1.0.11"
   },
   "devDependencies": {
     "eslint": "^8",
